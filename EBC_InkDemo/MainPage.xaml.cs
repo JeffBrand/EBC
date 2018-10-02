@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Micosoft.MTC.SmartInk.Package;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,12 @@ namespace EBC_InkDemo
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var manager = new PackageManager();
+            var p = await manager.GetInstalledPackagesAsync();
         }
     }
 }

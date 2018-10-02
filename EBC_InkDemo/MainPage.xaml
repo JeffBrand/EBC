@@ -6,9 +6,27 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    xmlns:win2d="using:Microsoft.Graphics.Canvas.UI.Xaml"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="LeftSideBar" Background="DodgerBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Ink Icon Gallery" Foreground="White" Style="{ThemeResource SubheaderTextBlockStyle}" Margin="10"/>
+            <ListView Grid.Row="2"/>
+        </Grid>
+        <TextBlock Grid.Column="1" Text="Draw Icons Here" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <win2d:CanvasControl x:Name="win2dCanvas" Grid.Column="1" ClearColor="Transparent" />
+      
+        <InkCanvas x:Name="inkCanvas"  Grid.Column="1"  />
+        
     </Grid>
 </Page>
