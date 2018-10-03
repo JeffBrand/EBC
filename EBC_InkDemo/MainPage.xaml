@@ -25,7 +25,10 @@
                 <ListView Grid.Row="2"/>
             </Grid>
         </Border>
-        <TextBlock Grid.Column="1" Text="Draw Icons Here" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <StackPanel x:Name="Background" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" Orientation="Vertical" VerticalAlignment="Center" Width="109">
+            <TextBlock Text="Draw Icons Here" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0"/>
+            <Image Source="/Assets/Pen-Icon.jpg" Opacity="0.4" />
+        </StackPanel>
         <win2d:CanvasControl x:Name="win2dCanvas" Grid.Column="1" ClearColor="Transparent" />
 
         <InkCanvas x:Name="inkCanvas"  Grid.Column="1"  />
