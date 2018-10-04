@@ -115,6 +115,17 @@
     </Content>
     <Content Include="Assets\AzureArchitect\iothub.jpg" />
     <Content Include="Assets\AzureArchitect\sql.jpg" />
+    <Content Include="Assets\EESample\ammeter.jpg" />
+    <Content Include="Assets\EESample\capacitor.jpg" />
+    <Content Include="Assets\EESample\diode.jpg" />
+    <Content Include="Assets\EESample\ground.jpg" />
+    <Content Include="Assets\EESample\lamp.jpg" />
+    <Content Include="Assets\EESample\motor.jpg" />
+    <Content Include="Assets\EESample\resistor.jpg" />
+    <Content Include="Assets\EESample\switch.jpg" />
+    <Content Include="Assets\EESample\transformer.jpg" />
+    <Content Include="Assets\EESample\voltage.jpg" />
+    <Content Include="Assets\EESample\voltmeter.jpg" />
     <Content Include="Assets\Pen-Icon.jpg" />
     <Content Include="Assets\welcome.png" />
     <Content Include="Properties\Default.rd.xml" />
