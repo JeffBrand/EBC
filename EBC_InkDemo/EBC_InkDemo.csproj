@@ -116,6 +116,7 @@
     <Content Include="Assets\AzureArchitect\iothub.jpg" />
     <Content Include="Assets\AzureArchitect\sql.jpg" />
     <Content Include="Assets\Pen-Icon.jpg" />
+    <Content Include="Assets\welcome.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
