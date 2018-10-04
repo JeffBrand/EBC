@@ -31,7 +31,7 @@
                     <RowDefinition Height="40"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Ink Icon Gallery" Foreground="White" Style="{ThemeResource SubheaderTextBlockStyle}" Margin="10"/>
+                <TextBlock Text="Ink Icon Gallery" Foreground="White" Style="{ThemeResource SubheaderTextBlockStyle}" Margin="10" HorizontalAlignment="Center"/>
                 <ItemsControl ItemTemplate="{StaticResource IconGalleryItemTemplate}" Grid.Row="2" ItemsSource="{Binding Samples}" />
             </Grid>
         </Border>
