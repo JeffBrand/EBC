@@ -8,7 +8,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     xmlns:win2d="using:Microsoft.Graphics.Canvas.UI.Xaml"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
+    DataContext="{Binding Source={StaticResource Locator}, Path=Main}"
+    >
 
     <Grid>
         <Grid.ColumnDefinitions>

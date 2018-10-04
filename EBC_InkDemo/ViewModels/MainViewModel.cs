@@ -10,5 +10,10 @@ namespace EBC_InkDemo.ViewModels
 {
     public class MainViewModel : AsyncViewModel
     {
+
+        protected override Task InitializeAsync()
+        {
+            return base.InitializeAsync();
+        }
     }
 }
