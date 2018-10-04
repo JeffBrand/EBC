@@ -4,7 +4,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:EBC_InkDemo"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     xmlns:win2d="using:Microsoft.Graphics.Canvas.UI.Xaml"
@@ -34,7 +34,7 @@
                 <StackPanel Margin="10,0,10,0">
                     <TextBlock Text="Ink Icon Gallery" Foreground="White" Style="{ThemeResource SubheaderTextBlockStyle}" Margin="10" HorizontalAlignment="Center"/>
                     <TextBlock Foreground="White" Text="Current SmartInk Package:" HorizontalAlignment="Center" Margin="0,0,0,10"/>
-                    <ComboBox x:Name="listviewInstalledPackages" HorizontalAlignment="Stretch" ItemsSource="{Binding InstalledPackages}" DisplayMemberPath="Name" SelectedItem="{Binding CurrentPackage}"/>
+                    <ComboBox x:Name="listviewInstalledPackages" HorizontalAlignment="Stretch" ItemsSource="{Binding InstalledPackages}" DisplayMemberPath="Name" SelectedIndex="0" SelectionChanged="listviewInstalledPackages_SelectionChanged"/>
                 </StackPanel>
                 <ItemsControl ItemTemplate="{StaticResource IconGalleryItemTemplate}" Grid.Row="2" ItemsSource="{Binding Samples}" />
             </Grid>

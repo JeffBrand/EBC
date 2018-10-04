@@ -1,5 +1,6 @@
 ﻿using AMP.ViewModels;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using Micosoft.MTC.SmartInk.Package;
 using System;
 using System.Collections.Generic;
@@ -34,9 +35,16 @@ namespace EBC_InkDemo.ViewModels
         public ObservableCollection<ISmartInkPackage> InstalledPackages { get; private set; } = new ObservableCollection<ISmartInkPackage>();
 
 
+        public RelayCommand<ISmartInkPackage> PackageSelected { get; set; }
+
         public MainViewModel()
         {
             Samples = new ReadOnlyObservableCollection<string>(_samples);
+
+            this.PackageSelected = new RelayCommand<ISmartInkPackage>(async(package) => {
+                CurrentPackage = package;
+                await LoadSampleGalleryAsync(CurrentPackage.Name);
+            });
         }
 
         protected override async Task InitializeAsync()
@@ -48,13 +56,9 @@ namespace EBC_InkDemo.ViewModels
         {
             InstalledPackages.Clear();
             _packages = await _packageManager.GetInstalledPackagesAsync();
-            if (_packages.Count > 0)
-            {
-                foreach (var package in _packages)
-                    InstalledPackages.Add(package);
-                CurrentPackage = _packages[0];
-                await LoadSampleGalleryAsync(CurrentPackage.Name);
-            }
+            foreach (var package in _packages)
+                InstalledPackages.Add(package);
+      
         }
 
         private async Task LoadSampleGalleryAsync(string galleryName)

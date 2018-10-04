@@ -1,5 +1,6 @@
 ﻿using AMP.Views;
 using EBC_InkDemo.Extensions;
+using EBC_InkDemo.ViewModels;
 using Micosoft.MTC.SmartInk.Package;
 using System;
 using System.Collections.Generic;
@@ -99,5 +100,11 @@ namespace EBC_InkDemo.Views
             return _boundingBox;
         }
 
+        private void listviewInstalledPackages_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var vm = DataContext as MainViewModel;
+            if (vm != null)
+                vm.PackageSelected.Execute(listviewInstalledPackages.SelectedItem);
+        }
     }
 }
