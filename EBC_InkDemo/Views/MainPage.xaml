@@ -1,5 +1,6 @@
-﻿<Page
+﻿<amp:NavAwarePage
     x:Class="EBC_InkDemo.Views.MainPage"
+    xmlns:amp="using:AMP.Views"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:EBC_InkDemo"
@@ -34,4 +35,4 @@
         <InkCanvas x:Name="inkCanvas"  Grid.Column="1"  />
 
     </Grid>
-</Page>
+</amp:NavAwarePage>
