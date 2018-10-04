@@ -110,9 +110,11 @@
     <None Include="EBC_InkDemo_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\AzureArchitectSamples\blob.jpg" />
-    <Content Include="Assets\AzureArchitectSamples\iothub.jpg" />
-    <Content Include="Assets\AzureArchitectSamples\sql.jpg" />
+    <Content Include="Assets\AzureArchitect\blob.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\AzureArchitect\iothub.jpg" />
+    <Content Include="Assets\AzureArchitect\sql.jpg" />
     <Content Include="Assets\Pen-Icon.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
