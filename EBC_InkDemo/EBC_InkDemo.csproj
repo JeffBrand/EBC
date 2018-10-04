@@ -108,6 +108,9 @@
     <None Include="EBC_InkDemo_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\AzureArchitectSamples\blob.jpg" />
+    <Content Include="Assets\AzureArchitectSamples\iothub.jpg" />
+    <Content Include="Assets\AzureArchitectSamples\sql.jpg" />
     <Content Include="Assets\Pen-Icon.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -135,9 +138,15 @@
     <PackageReference Include="MTC.SmartInk">
       <Version>1.0.1</Version>
     </PackageReference>
+    <PackageReference Include="MvvmLight">
+      <Version>5.4.1.1</Version>
+    </PackageReference>
     <PackageReference Include="SmartInk.AzureArchitect">
       <Version>1.0.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
