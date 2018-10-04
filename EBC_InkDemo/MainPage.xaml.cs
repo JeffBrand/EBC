@@ -1,4 +1,5 @@
 ﻿using EBC_InkDemo.Extensions;
+using Micosoft.MTC.SmartInk.Package;
 using System;
 using System.Collections.Generic;
 using Windows.Foundation;
@@ -29,6 +30,8 @@ namespace EBC_InkDemo
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        PackageManager _packageManager = new PackageManager();
+
         DispatcherTimer _timer = new DispatcherTimer() { Interval = TimeSpan.FromMilliseconds(750) };
         List<InkStroke> _sessionStrokes = new List<InkStroke>();
         List<InkStroke> _allStrokes = new List<InkStroke>();
