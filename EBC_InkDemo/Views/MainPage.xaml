@@ -20,6 +20,20 @@
     </amp:NavAwarePage.Resources>
 
     <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="SessionState">
+                <VisualState x:Name="Active">
+                    <VisualState.Setters>
+                        <Setter Target="WelcomeGrid.Visibility" Value="Collapsed"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="NotActive">
+                    <VisualState.Setters>
+                        <Setter Target="WelcomeGrid.Visibility" Value="Visible"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
             <ColumnDefinition/>
@@ -56,7 +70,11 @@
                       HorizontalAlignment="Right" VerticalAlignment="Top" 
                       Background="#7F808080" Foreground="White"
                       Click="buttonDelete_Click"/>
-        <Grid x:Name="WelcomeGrid" Grid.ColumnSpan="2" Background="White" Visibility="Collapsed" Tapped="WelcomeGrid_Tapped">
+        <Grid x:Name="WelcomeGrid" 
+              Grid.ColumnSpan="2" 
+              Background="White" 
+              Visibility="Visible" 
+              Tapped="WelcomeGrid_Tapped">
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" >
                 <Image Source="/Assets/welcome.png" Stretch="None"/>
             </StackPanel>
