@@ -11,6 +11,13 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
     DataContext="{Binding Source={StaticResource Locator}, Path=Main}"
     >
+    <amp:NavAwarePage.Resources>
+        <DataTemplate x:Key="IconGalleryItemTemplate">
+            <Grid Margin="0,0,0,10">
+                <Image Source="{Binding}" Height="128" Width="128"/>
+            </Grid>
+        </DataTemplate>
+    </amp:NavAwarePage.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -25,7 +32,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Ink Icon Gallery" Foreground="White" Style="{ThemeResource SubheaderTextBlockStyle}" Margin="10"/>
-                <ListView Grid.Row="2" ItemsSource="{Binding Samples}"/>
+                <ListView ItemTemplate="{StaticResource IconGalleryItemTemplate}" Grid.Row="2" ItemsSource="{Binding Samples}" />
             </Grid>
         </Border>
         <StackPanel x:Name="Background" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" Orientation="Vertical" VerticalAlignment="Center" Width="109">
