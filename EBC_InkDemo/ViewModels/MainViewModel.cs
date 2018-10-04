@@ -17,9 +17,8 @@ namespace EBC_InkDemo.ViewModels
         private ObservableCollection<string> _samples = new ObservableCollection<string>();
         public ReadOnlyObservableCollection<string> Samples { get; private set; }
 
-        private ISmartInkPackage _currentPackage;
         private IList<ISmartInkPackage> _packages;
-
+        private ISmartInkPackage _currentPackage;
         public ISmartInkPackage CurrentPackage
         {
             get { return _currentPackage; }
@@ -31,6 +30,8 @@ namespace EBC_InkDemo.ViewModels
                 RaisePropertyChanged(nameof(CurrentPackage));
             }
         }
+
+        public ObservableCollection<ISmartInkPackage> InstalledPackages { get; private set; } = new ObservableCollection<ISmartInkPackage>();
 
 
         public MainViewModel()
@@ -45,9 +46,12 @@ namespace EBC_InkDemo.ViewModels
 
         private async Task LoadInstalledSmartInkPackagesAsync()
         {
+            InstalledPackages.Clear();
             _packages = await _packageManager.GetInstalledPackagesAsync();
             if (_packages.Count > 0)
             {
+                foreach (var package in _packages)
+                    InstalledPackages.Add(package);
                 CurrentPackage = _packages[0];
                 await LoadSampleGalleryAsync(CurrentPackage.Name);
             }

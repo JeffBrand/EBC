@@ -31,7 +31,11 @@
                     <RowDefinition Height="40"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Ink Icon Gallery" Foreground="White" Style="{ThemeResource SubheaderTextBlockStyle}" Margin="10" HorizontalAlignment="Center"/>
+                <StackPanel Margin="10,0,10,0">
+                    <TextBlock Text="Ink Icon Gallery" Foreground="White" Style="{ThemeResource SubheaderTextBlockStyle}" Margin="10" HorizontalAlignment="Center"/>
+                    <TextBlock Foreground="White" Text="Current SmartInk Package:" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                    <ComboBox x:Name="listviewInstalledPackages" HorizontalAlignment="Stretch" ItemsSource="{Binding InstalledPackages}" DisplayMemberPath="Name" SelectedItem="{Binding CurrentPackage}"/>
+                </StackPanel>
                 <ItemsControl ItemTemplate="{StaticResource IconGalleryItemTemplate}" Grid.Row="2" ItemsSource="{Binding Samples}" />
             </Grid>
         </Border>
