@@ -106,5 +106,10 @@ namespace EBC_InkDemo.Views
             if (vm != null)
                 vm.PackageSelected.Execute(listviewInstalledPackages.SelectedItem);
         }
+
+        private void buttonDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

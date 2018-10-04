@@ -46,6 +46,11 @@
         <win2d:CanvasControl x:Name="win2dCanvas" Grid.Column="1" ClearColor="Transparent" />
 
         <InkCanvas x:Name="inkCanvas"  Grid.Column="1"  />
-
+        <AppBarButton x:Name="buttonDelete" 
+                      Icon="Delete" 
+                      Grid.Column="1" 
+                      HorizontalAlignment="Right" VerticalAlignment="Top" 
+                      Background="#7F808080" Foreground="White"
+                      Click="buttonDelete_Click"/>
     </Grid>
 </amp:NavAwarePage>
