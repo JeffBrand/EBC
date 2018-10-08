@@ -14,7 +14,9 @@
     <amp:NavAwarePage.Resources>
         <DataTemplate x:Key="IconGalleryItemTemplate">
             <Grid Margin="0,0,0,10">
-                <Image Source="{Binding}" Height="128" Width="128"/>
+                <Border BorderThickness="0" BorderBrush="Gray">
+                    <Image Source="{Binding}" Height="128" Width="128"/>
+                </Border>
             </Grid>
         </DataTemplate>
     </amp:NavAwarePage.Resources>
@@ -50,7 +52,9 @@
                     <TextBlock Foreground="White" Text="Current SmartInk Package:" HorizontalAlignment="Center" Margin="0,0,0,10"/>
                     <ComboBox x:Name="listviewInstalledPackages" HorizontalAlignment="Stretch" ItemsSource="{Binding InstalledPackages}" DisplayMemberPath="Name" SelectedIndex="0" SelectionChanged="listviewInstalledPackages_SelectionChanged"/>
                 </StackPanel>
-                <ItemsControl ItemTemplate="{StaticResource IconGalleryItemTemplate}" Grid.Row="2" ItemsSource="{Binding Samples}" />
+                <ScrollViewer Grid.Row="2" >
+                    <ItemsControl ItemTemplate="{StaticResource IconGalleryItemTemplate}" ItemsSource="{Binding Samples}" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" />
+                </ScrollViewer>
             </Grid>
         </Border>
         <StackPanel x:Name="Background" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" Orientation="Vertical" VerticalAlignment="Center" >
@@ -61,7 +65,8 @@
                        Margin="0,0,0,0"/>
             <Image Source="/Assets/Pen-Icon.jpg" Opacity="0.4" Stretch="none"/>
         </StackPanel>
-        <win2d:CanvasControl x:Name="win2dCanvas" Grid.Column="1" ClearColor="Transparent" />
+        <Canvas x:Name="iconCanvas"  Grid.Column="1" />
+        <win2d:CanvasControl x:Name="win2dCanvas" Grid.Column="1" ClearColor="Transparent" Draw="win2dCanvas_Draw"/>
 
         <InkCanvas x:Name="inkCanvas"  Grid.Column="1"  />
         <AppBarButton x:Name="buttonDelete" 
@@ -74,7 +79,7 @@
               Grid.ColumnSpan="2" 
               Background="White" 
               Visibility="Visible" 
-              Tapped="WelcomeGrid_Tapped">
+              Tapped="WelcomeGrid_Tapped" d:IsHidden="True">
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" >
                 <Image Source="/Assets/welcome.png" Stretch="None"/>
             </StackPanel>
