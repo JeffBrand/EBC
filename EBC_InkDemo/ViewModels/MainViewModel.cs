@@ -8,6 +8,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Storage;
+using Windows.UI.Input.Inking;
 
 namespace EBC_InkDemo.ViewModels
 {
@@ -45,6 +47,20 @@ namespace EBC_InkDemo.ViewModels
                 CurrentPackage = package;
                 await LoadSampleGalleryAsync(CurrentPackage.Name);
             });
+        }
+
+        public  Task<IDictionary<string, float>> ProcessInkAsync(IList<InkStroke> strokes)
+        {
+            return CurrentPackage.EvaluateAsync(strokes);
+        }
+
+        public Task<IStorageFile> GetIconAsync(string tagname)
+        {
+            if (string.IsNullOrWhiteSpace(tagname))
+                return Task.FromResult<IStorageFile>(null);
+
+            var media = CurrentPackage as IMediaPackage;
+            return media.GetMediaAsync(tagname);
         }
 
         protected override async Task InitializeAsync()
