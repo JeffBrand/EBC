@@ -60,7 +60,7 @@ namespace EBC_InkDemo.ViewModels
                 return Task.FromResult<IStorageFile>(null);
 
             var media = CurrentPackage as IMediaPackage;
-            return media.GetMediaAsync(tagname);
+            return media.GetMediaByNameAsync(tagname);
         }
 
         protected override async Task InitializeAsync()
